@@ -58,9 +58,8 @@ export default function MarksTable() {
         />
     </div>
 
-    {/* Responsive zoom-out with scroll on small screens */}
-    <div className="overflow-x-auto sm:overflow-visible">
-        <div className="scale-[0.75] sm:scale-100 origin-top-right min-w-[800px]">
+
+
             <DataTable
                 value={courses}
                 rows={10}
@@ -78,7 +77,6 @@ export default function MarksTable() {
                 <Column body={sectionDefButton} header={<span className="text-right w-full block">تعريف القسم</span>} style={{ minWidth: '8rem' }} />
             </DataTable>
         </div>
-    </div>
-</div>
+
     );
 }
