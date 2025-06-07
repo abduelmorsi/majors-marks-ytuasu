@@ -48,30 +48,34 @@ export default function MarksTable() {
 
     return (
         <div className="card max-w-4xl mx-auto mt-8 p-6 bg-white rounded-lg shadow text-lg">
-            <div className="mb-4 flex justify-end">
-                <input
-                    type="text"
-                    placeholder="ابحث..."
-                    value={globalFilter}
-                    onChange={e => setGlobalFilter(e.target.value)}
-                    className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-64 text-right text-lg rtl"
-                />
-            </div>
-            <DataTable
-                value={courses}
-                rows={10}
-                dataKey="id"
-                emptyMessage="لا توجد بيانات"
-                globalFilter={globalFilter}
-                className="text-right text-lg"
-                filterDisplay="row"
-                dir="rtl"
-            >
-                <Column field="name" header={<span className="text-right w-full block">القسم</span>} style={{ minWidth: '12rem' }} />
-                <Column field="code" header={<span className="text-right w-full block">الدرجة</span>} style={{ minWidth: '6rem' }} sortable />
-                <Column field="ثابت" header={<span className="text-right w-full block">عدد المثبتين</span>} style={{ minWidth: '8rem' }} />
-                <Column body={sectionDefButton} header={<span className="text-right w-full block">تعريف القسم</span>} style={{ minWidth: '8rem' }} />
-            </DataTable>
-        </div>
+    <div className="mb-4 flex justify-end">
+        <input
+            type="text"
+            placeholder="ابحث..."
+            value={globalFilter}
+            onChange={e => setGlobalFilter(e.target.value)}
+            className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-64 text-right text-lg rtl"
+        />
+    </div>
+
+    <div className="scale-[0.85] sm:scale-100 origin-top-right transition-transform">
+        <DataTable
+            value={courses}
+            rows={10}
+            dataKey="id"
+            emptyMessage="لا توجد بيانات"
+            globalFilter={globalFilter}
+            className="text-right text-lg"
+            filterDisplay="row"
+            dir="rtl"
+            tableClassName="border border-gray-300"
+        >
+            <Column field="name" header={<span className="text-right w-full block">القسم</span>} style={{ minWidth: '12rem' }} />
+            <Column field="code" header={<span className="text-right w-full block">الدرجة</span>} style={{ minWidth: '6rem' }} sortable />
+            <Column field="ثابت" header={<span className="text-right w-full block">عدد المثبتين</span>} style={{ minWidth: '8rem' }} />
+            <Column body={sectionDefButton} header={<span className="text-right w-full block">تعريف القسم</span>} style={{ minWidth: '8rem' }} />
+        </DataTable>
+    </div>
+</div>
     );
 }
