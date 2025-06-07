@@ -48,7 +48,7 @@ function MajorsDetails() {
                 {`
                 @media (max-width: 600px) {
                     .pdf-box {
-                        height: 50vh !important;
+                        height: 80vh !important;
                         min-height: 180px !important;
                     }
                 }
