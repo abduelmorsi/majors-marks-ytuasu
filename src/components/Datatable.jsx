@@ -58,23 +58,26 @@ export default function MarksTable() {
         />
     </div>
 
-    <div className="scale-[0.85] sm:scale-100 origin-top-right transition-transform">
-        <DataTable
-            value={courses}
-            rows={10}
-            dataKey="id"
-            emptyMessage="لا توجد بيانات"
-            globalFilter={globalFilter}
-            className="text-right text-lg"
-            filterDisplay="row"
-            dir="rtl"
-            tableClassName="border border-gray-300"
-        >
-            <Column field="name" header={<span className="text-right w-full block">القسم</span>} style={{ minWidth: '12rem' }} />
-            <Column field="code" header={<span className="text-right w-full block">الدرجة</span>} style={{ minWidth: '6rem' }} sortable />
-            <Column field="ثابت" header={<span className="text-right w-full block">عدد المثبتين</span>} style={{ minWidth: '8rem' }} />
-            <Column body={sectionDefButton} header={<span className="text-right w-full block">تعريف القسم</span>} style={{ minWidth: '8rem' }} />
-        </DataTable>
+    {/* Responsive zoom-out with scroll on small screens */}
+    <div className="overflow-x-auto sm:overflow-visible">
+        <div className="scale-[0.75] sm:scale-100 origin-top-right min-w-[800px]">
+            <DataTable
+                value={courses}
+                rows={10}
+                dataKey="id"
+                emptyMessage="لا توجد بيانات"
+                globalFilter={globalFilter}
+                className="text-right text-lg"
+                filterDisplay="row"
+                dir="rtl"
+                tableClassName="border border-gray-300"
+            >
+                <Column field="name" header={<span className="text-right w-full block">القسم</span>} style={{ minWidth: '12rem' }} />
+                <Column field="code" header={<span className="text-right w-full block">الدرجة</span>} style={{ minWidth: '6rem' }} sortable />
+                <Column field="ثابت" header={<span className="text-right w-full block">عدد المثبتين</span>} style={{ minWidth: '8rem' }} />
+                <Column body={sectionDefButton} header={<span className="text-right w-full block">تعريف القسم</span>} style={{ minWidth: '8rem' }} />
+            </DataTable>
+        </div>
     </div>
 </div>
     );
