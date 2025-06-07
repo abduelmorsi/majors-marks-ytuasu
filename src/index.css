@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.p-datatable-table td,
+.p-datatable-table th {
+    border: 1px solid #d1d5db; /* Tailwind's gray-300 */
+}
+
