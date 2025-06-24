@@ -10,6 +10,9 @@ A web app for viewing YTU majors, admission marks, and detailed department infor
 - واجهة عربية متجاوبة وسهلة الاستخدام
 - روابط مباشرة لبوت تلجرام للمساعدة
 
+## Live Link
+https://majors-marks-ytuasu.pages.dev/
+
 ## Tech Stack
 
 - [React](https://react.dev/)
